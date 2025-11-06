@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>증명사진 메이커 - 간편하게 증명사진 만들기</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+
+    <div class="container">
+        <!-- 헤더 -->
+        <header class="header">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="12" fill="url(#gradient)"/>
+                    <path d="M20 10C14.477 10 10 14.477 10 20C10 25.523 14.477 30 20 30C25.523 30 30 25.523 30 20C30 14.477 25.523 10 20 10ZM20 16C21.657 16 23 17.343 23 19C23 20.657 21.657 22 20 22C18.343 22 17 20.657 17 19C17 17.343 18.343 16 20 16ZM20 28C17.333 28 15.031 26.611 13.667 24.5C13.697 22.333 17.333 21.167 20 21.167C22.667 21.167 26.303 22.333 26.333 24.5C24.969 26.611 22.667 28 20 28Z" fill="white"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="0" y1="0" x2="40" y2="40">
+                            <stop offset="0%" stop-color="#667eea"/>
+                            <stop offset="100%" stop-color="#764ba2"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h1>증명사진 메이커</h1>
+            </div>
+            <p class="subtitle">간편하게 증명사진과 반명함 사진을 만드세요</p>
+        </header>
+
+        <!-- 메인 컨텐츠 -->
+        <main class="main-content">
+            <!-- 업로드 섹션 -->
+            <section class="upload-section" id="uploadSection">
+                <div class="glass-card upload-card">
+                    <div class="upload-icon">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="40" cy="40" r="40" fill="url(#uploadGradient)" opacity="0.1"/>
+                            <path d="M40 25V45M40 25L32 33M40 25L48 33" stroke="url(#uploadGradient)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25 50V52C25 54.761 27.239 57 30 57H50C52.761 57 55 54.761 55 52V50" stroke="url(#uploadGradient)" stroke-width="4" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="uploadGradient" x1="25" y1="25" x2="55" y2="55">
+                                    <stop offset="0%" stop-color="#667eea"/>
+                                    <stop offset="100%" stop-color="#764ba2"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h2>사진을 업로드하세요</h2>
+                    <p class="upload-description">JPG, PNG 파일을 여기에 드래그하거나 클릭하세요</p>
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                    <button class="btn-primary" id="uploadBtn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 5V12M10 5L7 8M10 5L13 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5 13V14C5 15.105 5.895 16 7 16H13C14.105 16 15 15.105 15 14V13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        파일 선택
+                    </button>
+                </div>
+            </section>
+
+            <!-- 편집 섹션 -->
+            <section class="editor-section" id="editorSection" style="display: none;">
+                <div class="editor-layout">
+                    <!-- 왼쪽: 옵션 패널 -->
+                    <aside class="options-panel glass-card">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/>
+                                <path d="M10 6V10L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            사진 설정
+                        </h3>
+
+                        <!-- 사이즈 선택 -->
+                        <div class="option-group">
+                            <label class="option-label">사진 크기</label>
+                            <div class="size-options">
+                                <button class="size-btn active" data-size="3x4">
+                                    <span class="size-name">여권/비자</span>
+                                    <span class="size-value">3×4 cm</span>
+                                </button>
+                                <button class="size-btn" data-size="3.5x4.5">
+                                    <span class="size-name">증명사진</span>
+                                    <span class="size-value">3.5×4.5 cm</span>
+                                </button>
+                                <button class="size-btn" data-size="4x5">
+                                    <span class="size-name">반명함</span>
+                                    <span class="size-value">4×5 cm</span>
+                                </button>
+                                <button class="size-btn" data-size="5x7">
+                                    <span class="size-name">명함</span>
+                                    <span class="size-value">5×7 cm</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 배경 색상 선택 -->
+                        <div class="option-group">
+                            <label class="option-label">배경 색상</label>
+                            <div class="color-options">
+                                <button class="color-btn active" data-color="#FFFFFF" style="background: #FFFFFF;">
+                                    <span class="color-checkmark">✓</span>
+                                </button>
+                                <button class="color-btn" data-color="#E8F1FF" style="background: #E8F1FF;">
+                                    <span class="color-checkmark">✓</span>
+                                </button>
+                                <button class="color-btn" data-color="#F0F0F0" style="background: #F0F0F0;">
+                                    <span class="color-checkmark">✓</span>
+                                </button>
+                                <button class="color-btn" data-color="#FFE8E8" style="background: #FFE8E8;">
+                                    <span class="color-checkmark">✓</span>
+                                </button>
+                                <button class="color-btn" data-color="#E8FFE8" style="background: #E8FFE8;">
+                                    <span class="color-checkmark">✓</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 이미지 조정 -->
+                        <div class="option-group">
+                            <label class="option-label">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M5 8L8 11L11 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                크기 조절
+                            </label>
+                            <input type="range" id="scaleSlider" min="50" max="200" value="100" class="slider">
+                            <div class="slider-value"><span id="scaleValue">100</span>%</div>
+                        </div>
+
+                        <div class="option-group">
+                            <label class="option-label">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M8 5V8L10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                밝기 조절
+                            </label>
+                            <input type="range" id="brightnessSlider" min="50" max="150" value="100" class="slider">
+                            <div class="slider-value"><span id="brightnessValue">100</span>%</div>
+                        </div>
+
+                        <!-- 액션 버튼 -->
+                        <div class="action-buttons">
+                            <button class="btn-secondary" id="resetBtn">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path d="M2 9C2 5.134 5.134 2 9 2C12.866 2 16 5.134 16 9C16 12.866 12.866 16 9 16C6.5 16 4.3 14.5 3.2 12.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    <path d="M2 12L2 9L5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                초기화
+                            </button>
+                            <button class="btn-primary" id="downloadBtn">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path d="M9 3V11M9 11L6 8M9 11L12 8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M3 13V14C3 15.105 3.895 16 5 16H13C14.105 16 15 15.105 15 14V13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                다운로드
+                            </button>
+                        </div>
+                    </aside>
+
+                    <!-- 오른쪽: 미리보기 -->
+                    <div class="preview-panel">
+                        <div class="glass-card preview-card">
+                            <h3>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="10" cy="9" r="3" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M7 15C7 13.5 8.5 12 10 12C11.5 12 13 13.5 13 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                미리보기
+                            </h3>
+                            <div class="preview-container" id="previewContainer">
+                                <canvas id="previewCanvas"></canvas>
+                                <div class="preview-hint">
+                                    <p>👆 드래그하여 위치를 조정하세요</p>
+                                </div>
+                            </div>
+                            <div class="preview-info">
+                                <div class="info-item">
+                                    <span class="info-label">출력 크기</span>
+                                    <span class="info-value" id="outputSize">3×4 cm</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">해상도</span>
+                                    <span class="info-value">300 DPI</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 다시 업로드 버튼 -->
+                        <button class="btn-text" id="reuploadBtn">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <path d="M9 3V11M9 3L6 6M9 3L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3 11V13C3 14.105 3.895 15 5 15H13C14.105 15 15 14.105 15 13V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            다른 사진 업로드
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 푸터 -->
+        <footer class="footer">
+            <p>© 2025 증명사진 메이커. 모든 권리 보유.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
