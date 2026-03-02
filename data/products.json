@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "name": "DevTools Pro",
+    "description": "개발자를 위한 올인원 생산성 툴. 코드 스니펫 관리, API 테스터, JSON 포매터 등 30가지 기능 포함.",
+    "type": "app",
+    "price": 29000,
+    "imageUrl": "https://placehold.co/600x400/0b84f3/ffffff?text=DevTools+Pro",
+    "fileUrl": "https://example.com/files/devtools-pro-v1.0.zip",
+    "createdAt": "2026-03-01T00:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "name": "Next.js 완전 정복",
+    "description": "App Router부터 배포까지. Next.js 14 기반 실전 프로젝트를 단계별로 따라 만드는 전자책 (PDF, 350페이지).",
+    "type": "ebook",
+    "price": 19000,
+    "imageUrl": "https://placehold.co/600x400/10b981/ffffff?text=Next.js+완전정복",
+    "fileUrl": "https://example.com/files/nextjs-ebook.pdf",
+    "createdAt": "2026-03-01T00:00:00.000Z"
+  },
+  {
+    "id": "3",
+    "name": "MarkdownFlow",
+    "description": "실시간 미리보기와 내보내기 기능을 갖춘 마크다운 에디터. PDF, HTML, DOCX 변환 지원.",
+    "type": "app",
+    "price": 15000,
+    "imageUrl": "https://placehold.co/600x400/6366f1/ffffff?text=MarkdownFlow",
+    "fileUrl": "https://example.com/files/markdownflow-v2.1.zip",
+    "createdAt": "2026-03-01T00:00:00.000Z"
+  },
+  {
+    "id": "4",
+    "name": "TypeScript 핵심 패턴",
+    "description": "현업에서 바로 쓰는 TypeScript 고급 패턴 모음. 제네릭, 유틸리티 타입, 조건부 타입 완벽 해설 (PDF, 220페이지).",
+    "type": "ebook",
+    "price": 14000,
+    "imageUrl": "https://placehold.co/600x400/f59e0b/ffffff?text=TypeScript+패턴",
+    "fileUrl": "https://example.com/files/typescript-patterns.pdf",
+    "createdAt": "2026-03-01T00:00:00.000Z"
+  }
+]
